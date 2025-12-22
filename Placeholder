@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+     <b> HTML(HyperText Mark-Up Language)</b>  
+      </center>
+     <lable for="">
+        Username:
+        <input type="text" placeholder="">
+     </lable>
+     <br>
+     <lable for="">
+        E-mail:
+        <input type="email" placeholder="">
+     </lable>
+     <br>
+     <a href="www.facebook.com"> SUBMIT</a>
+        <table border="1txt">
+            <tr>
+            <th>S.No</th>
+            <th>Student</th>
+            <th>ID</th>
+            </tr>
+            <tr>
+            <td>1.</td>
+            <td>sesi</td>
+            <td>1234567890</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>sai</td>
+                <td>9391930538</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>manesh</td>
+                <td>0985327534</td>
+            </tr>
+        </table>
+        <ol>
+            <li>sesi</li>
+            <li>sai</li>
+            <li>manesh</li>
+        </ol>
+        <ul>
+            <li>1234567890</li>
+            <li>9391930538</li>
+            <li>0985327534</li>
+        </ul>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQasKPDCewT1v2j4mJjfCN1rqH2SczejiwkoA&s"
+</body>
+</html>
