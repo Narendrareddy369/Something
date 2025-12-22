@@ -1,0 +1,75 @@
+` <!DOCTYPE html>
+<html>
+<head>
+    <title>Minimalist JS Chess</title>
+    <style>
+        body { background: #222; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        #board { display: grid; grid-template-columns: repeat(8, 60px); grid-template-rows: repeat(8, 60px); border: 5px solid #444; }
+        .square { width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 40px; cursor: pointer; }
+        .white { background: #eeeed2; }
+        .black { background: #769656; }
+        .selected { background: #f7f769 !important; }
+    </style>
+</head>
+<body>
+
+    <div id="board"></div>
+
+    <script>
+        const board = document.getElementById('board');
+        // Initial board layout using Unicode Chess Characters
+        const startPos = [
+            ['♜','♞','♝','♛','♚','♝','♞','♜'],
+            ['♟','♟','♟','♟','♟','♟','♟','♟'],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['♙','♙','♙','♙','♙','♙','♙','♙'],
+            ['♖','♘','♗','♕','♔','♗','♘','♖']
+    ]
+
+        let selectedSquare = null;
+
+        function createBoard() {
+            board.innerHTML = '';
+            for (let r = 0; r < 8; r++) {
+                for (let c = 0; c < 8; c++) {
+                    const square = document.createElement('div');
+                    square.className = `square ${(r + c) % 2 === 0 ? 'white' : 'black'}`;
+                    square.dataset.row = r;
+                    square.dataset.col = c;
+                    square.innerText = startPos[r][c];
+                    
+                    square.onclick = () => handleSquareClick(r, c, square);
+                    board.appendChild(square);
+                }
+            }
+        }
+
+        function handleSquareClick(r, c, el) {
+            if (selectedSquare) {
+                // Move piece
+                const prevR = selectedSquare.r;
+                const prevC = selectedSquare.c;
+                
+                startPos[r][c] = startPos[prevR][prevC];
+                startPos[prevR][prevC] = '';
+                
+                selectedSquare = null;
+                createBoard();
+            } else {
+                // Select piece
+                if (startPos[r][c] !== '') {
+                    selectedSquare = { r, c };
+                    createBoard(); // Refresh to show highlight
+                    const squares = document.querySelectorAll('.square');
+                    squares[r * 8 + c].classList.add('selected');
+                }
+            }
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>  
