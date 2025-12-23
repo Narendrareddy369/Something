@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form page</title> 
+        
+        <style>
+            {
+                margin:
+                padding
+            }
+            .head{
+                 border:2px solid red;
+                 width:100%;
+                 height:8vw;
+                 background-color: chocolate;
+    
+            }
+        </style>
+        </head>
+        <body>
+            <center>
+                <h1 style="color: red; background-color:whitesmoke;">Form</h1>
+            </center>
+        <form>
+            <label for=""
+            ID:
+            <input type="text" placeholder="Enter your ID">
+        </label><br><br>
+        <label for="">
+            Name:
+            <input type="Name" placeholder="Enter your Name">
+           <lable><br><br>
+        </lable for="">
+
+            Email:
+            <input type="email" placeholder="Enter your Email">
+            </label><br><br>
+            <label for="">
+                phone number:
+                <input type="text" placeholder="Enter your phn number">
+                </label><br><br>
+                <lable for="">
+                Gender:
+                <input type="radio" name="gender">male
+                <input type="radio" name="gender">Female
+            </label><br><br>
+            <label for="">
+                Address:
+                <textarea name="" id="" rows="5" cols="50"></textarea>
+            </label><br><br>
+            <lable for="">
+                Branch:
+                <select name="select_one" id="">
+                  <option>CSE</option>
+                  <option>AIML</option>
+                  <option>AIDS</option>
+                  <option>CIVIL</option>  
+                </select>
+            </lable>
+            <br>
+            <a href=>SUBMIT</a>
